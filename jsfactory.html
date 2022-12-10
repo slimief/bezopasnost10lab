@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<style type="text/css">
+
+</style>
+</head>
+<script>
+    function isCoprime (a, b) 
+    {
+        console.log(a + "," + b);
+        while (b){
+        num = a % b;
+        a = b;
+        b = num;
+        }
+        if (Math.abs(a) == 1) {
+        console.log(true);
+        return true;
+        }
+    }
+    var massiv = [];
+var a = +prompt("Модуль");
+for(var b = 0; b < a; b++)
+{
+    if(isCoprime(a, b))
+    {
+        massiv.push(b);
+    }
+}
+var stepen = massiv.length;
+alert(stepen);
+for(var g = 2; g < a; g++)
+{
+    var result = g ** stepen;
+    if(result > a)
+    {
+        if(result % a == 1)
+        {
+            alert("результат: " + g);
+            break;
+        }
+    }
+    else
+    {
+        if(result == 1)
+        {
+            alert("результат: " + g);
+            break;
+        }
+    }
+}
+
+</script>
+<body>
+</body>
+</html>
